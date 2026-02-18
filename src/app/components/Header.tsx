@@ -3,6 +3,8 @@ import { ShoppingCart, Ticket } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { User } from "lucide-react";
+
 
 export function Header() {
   const { getItemCount } = useCart();
@@ -25,17 +27,25 @@ export function Header() {
           </Link>
         </nav>
 
-        <Link to="/checkout">
-          <Button variant="outline" className="relative">
-            <ShoppingCart className="size-5 mr-2" />
-            Cart
-            {itemCount > 0 && (
-              <Badge className="absolute -top-2 -right-2 size-6 flex items-center justify-center p-0 rounded-full">
-                {itemCount}
-              </Badge>
-            )}
-          </Button>
-        </Link>
+        <div className="flex items-center gap-3">
+  <Link to="/auth">
+    <Button variant="outline" size="icon">
+      <User className="size-5" />
+    </Button>
+  </Link>
+
+  <Link to="/checkout">
+    <Button variant="outline" className="relative">
+      <ShoppingCart className="size-5 mr-2" />
+      Cart
+      {itemCount > 0 && (
+        <Badge className="absolute -top-2 -right-2 size-6 flex items-center justify-center p-0 rounded-full">
+          {itemCount}
+        </Badge>
+      )}
+    </Button>
+  </Link>
+        </div>
       </div>
     </header>
   );
