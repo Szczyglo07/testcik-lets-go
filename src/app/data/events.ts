@@ -124,9 +124,10 @@ export const events: Event[] = [
   venue: 'Comedy Club',
   location: 'Warsaw, PL',
   image: 'https://images.unsplash.com/photo-1527224538127-2104bb71c51b',
+  description:'',
   ticketTypes: [
-    { name: 'Standard', price: 45 },
-    { name: 'VIP', price: 90 },
+    {id: 't7-1', name: 'Standard', price: 45, available: 200,},
+    {id: 't7-2', name: 'VIP', price: 90, available:80},
   ],
 },
 
@@ -139,9 +140,10 @@ export const events: Event[] = [
   venue: 'Expo Center',
   location: 'Kraków, PL',
   image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87',
+  description:'',
   ticketTypes: [
-    { name: 'Basic', price: 120 },
-    { name: 'Premium', price: 250 },
+    {id: 't8-1', name: 'Standard', price: 45, available: 200,},
+    {id: 't8-2', name: 'VIP', price: 90, available:80},
   ],
 },
 
@@ -154,24 +156,10 @@ export const events: Event[] = [
   venue: 'Grand Theatre',
   location: 'Gdansk, PL',
   image: 'https://images.unsplash.com/photo-1503095396549-807759245b35',
+  description:'',
   ticketTypes: [
-    { name: 'Balcony', price: 60 },
-    { name: 'Front Row', price: 140 },
-  ],
-},
-
-{
-  id: '10',
-  title: 'City Sports Marathon',
-  category: 'sports',
-  date: '2026-10-12',
-  time: '07:00',
-  venue: 'City Stadium',
-  location: 'Poznan, PL',
-  image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211',
-  ticketTypes: [
-    { name: 'Runner', price: 30 },
-    { name: 'VIP Runner', price: 80 },
+    {id: 't9-1', name: 'Standard', price: 45, available: 200,},
+    {id: 't9-2', name: 'VIP', price: 90, available:80},
   ],
 },
 
@@ -184,9 +172,10 @@ export const events: Event[] = [
   venue: 'Open Air Arena',
   location: 'Berlin, DE',
   image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063',
+  description:'',
   ticketTypes: [
-    { name: 'General', price: 70 },
-    { name: 'Backstage', price: 180 },
+    {id: 't10-1', name: 'Standard', price: 45, available: 200,},
+    {id: 't10-2', name: 'VIP', price: 90, available:80},
   ],
 },
 ];
