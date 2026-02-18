@@ -34,11 +34,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-  <Link to="/auth">
-    <Button variant="outline" size="icon">
-      <User className="size-5" />
-    </Button>
-  </Link>
+
 
   <Link to="/checkout">
     <Button variant="outline" className="relative">
