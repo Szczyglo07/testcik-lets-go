@@ -1,7 +1,7 @@
 export interface Event {
   id: string;
   title: string;
-  category: 'Music' | 'Sports' | 'Theater' | 'Comedy' | 'Festival' | 'Conference';
+  category: 'music' | 'sports' | 'theater' | 'comedy' | 'festival' | 'conference';
   date: string;
   time: string;
   venue: string;
@@ -23,7 +23,7 @@ export const events: Event[] = [
   {
     id: '1',
     title: 'Summer Music Festival 2026',
-    category: 'Festival',
+    category: 'festival',
     date: '2026-07-15',
     time: '18:00',
     venue: 'Central Park',
@@ -39,7 +39,7 @@ export const events: Event[] = [
   {
     id: '2',
     title: 'Rock Legends Live',
-    category: 'Music',
+    category: 'music',
     date: '2026-05-20',
     time: '20:00',
     venue: 'Madison Square Garden',
@@ -55,7 +55,7 @@ export const events: Event[] = [
   {
     id: '3',
     title: 'Championship Finals',
-    category: 'Sports',
+    category: 'sports',
     date: '2026-06-10',
     time: '19:30',
     venue: 'National Stadium',
@@ -71,7 +71,7 @@ export const events: Event[] = [
   {
     id: '4',
     title: 'Broadway: The Phantom Returns',
-    category: 'Theater',
+    category: 'theater',
     date: '2026-04-25',
     time: '19:00',
     venue: 'Broadway Theater',
@@ -87,7 +87,7 @@ export const events: Event[] = [
   {
     id: '5',
     title: 'Comedy Night: Stand-Up Stars',
-    category: 'Comedy',
+    category: 'comedy',
     date: '2026-03-30',
     time: '20:30',
     venue: 'Comedy Club Downtown',
@@ -102,7 +102,7 @@ export const events: Event[] = [
   {
     id: '6',
     title: 'Tech Innovation Summit 2026',
-    category: 'Conference',
+    category: 'conference',
     date: '2026-09-12',
     time: '09:00',
     venue: 'Convention Center',
