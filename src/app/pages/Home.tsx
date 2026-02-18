@@ -29,8 +29,8 @@ export function Home() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl mb-4">Discover Amazing Events</h1>
-          <p className="text-xl opacity-90">Find and book tickets for concerts, sports, theater, and more</p>
+          <h1 className="text-5xl mb-4">Odkryj Niesamowite Wydarzenia</h1>
+          <p className="text-xl opacity-90">Znajdz i zamow swoje bilety na concerty,mecze,teatr i znacznie wiecej</p>
         </div>
       </div>
 
