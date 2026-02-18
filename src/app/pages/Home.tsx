@@ -6,13 +6,22 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 
-const categories = ['All', 'Music', 'Sports', 'Theater', 'Comedy', 'Festival', 'Conference'];
+const categories = ['all', 'music', 'sports', 'theater', 'comedy', 'festival', 'conference'];
+const categoryLabels: Record<string, string> = {
+  all: 'Wszystkie',
+  music: 'Muzyka',
+  sports: 'Sport',
+  theater: 'Teatr',
+  comedy: 'Stand-up',
+  festival: 'Festiwal',
+  conference: 'Konferencje',
+};
 
 export function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const filteredEvents =
-    selectedCategory === 'All'
+    selectedCategory === 'all'
       ? events
       : events.filter((event) => event.category === selectedCategory);
 
@@ -34,7 +43,7 @@ export function Home() {
               onClick={() => setSelectedCategory(category)}
               className="whitespace-nowrap"
             >
-              {category}
+              {categoryLabels[category]}
             </Button>
           ))}
         </div>
