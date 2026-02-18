@@ -3,6 +3,12 @@ import { ShoppingCart, Ticket } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../components/ui/dropdown-menu';
 import { User } from "lucide-react";
 
 
@@ -45,6 +51,23 @@ export function Header() {
       )}
     </Button>
   </Link>
+  <DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline" size="icon">
+      <User className="size-5" />
+    </Button>
+  </DropdownMenuTrigger>
+
+  <DropdownMenuContent align="end">
+    <DropdownMenuItem asChild>
+      <Link to="/login">Zaloguj się</Link>
+    </DropdownMenuItem>
+
+    <DropdownMenuItem asChild>
+      <Link to="/register">Rejestracja</Link>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
         </div>
       </div>
     </header>
