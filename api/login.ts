@@ -11,29 +11,35 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  const users = await sql`
-    SELECT * FROM users WHERE email = ${email}
-  `;
+    const users = await sql`
+      SELECT * FROM users WHERE email = ${email}
+    `;
 
-  const user = users[0];
+    const user = users[0];
 
-  if (!user) {
-    return res.status(401).json({ error: "User not found" });
+    if (!user) {
+      return res.status(401).json({ error: "Invalid login" });
+    }
+
+    const valid = await bcrypt.compare(password, user.password);
+
+    if (!valid) {
+      return res.status(401).json({ error: "Invalid login" });
+    }
+
+    const token = jwt.sign(
+      { userId: user.user_id, username: user.username },
+      process.env.JWT_SECRET!,
+      { expiresIn: "7d" }
+    );
+
+    return res.status(200).json({ token });
+  } catch (err) {
+    console.error("LOGIN ERROR:", err);
+    return res.status(500).json({ error: "Login failed" });
   }
-
-  const valid = await bcrypt.compare(password, user.password);
-
-  if (!valid) {
-    return res.status(401).json({ error: "Wrong password" });
-  }
-
-  const token = jwt.sign(
-    { userId: user.user_id },
-    process.env.JWT_SECRET!,
-    { expiresIn: "7d" }
-  );
-
-  res.status(200).json({ token });
 }
+
