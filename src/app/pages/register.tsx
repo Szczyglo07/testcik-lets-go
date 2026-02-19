@@ -46,7 +46,7 @@ export function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="bg-black text-white p-2 w-full">
+        <button type="submit" className="bg-black text-white p-2 w-full">
           Zarejestruj
         </button>
       </form>
