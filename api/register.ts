@@ -6,13 +6,21 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
+    console.log("REGISTER API HIT");
+  console.log("BODY:", req.body);
   // tylko POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const { username, email, password } = req.body;
+    const body =
+  typeof req.body === "string"
+    ? JSON.parse(req.body)
+    : req.body;
+
+const { username, email, password } = body;
+
 
     // sprawdzenie czy dane istnieją
     if (!username || !email || !password) {
