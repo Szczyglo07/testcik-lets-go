@@ -3,8 +3,8 @@ import { Root } from './pages/Root';
 import { Home } from './pages/Home';
 import { EventDetail } from './pages/EventDetail';
 import { Checkout } from './pages/Checkout';
-import { Login } from "./pages/Login";
-import { Register } from "./pages/Register";
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
 
 
 export const router = createBrowserRouter([
