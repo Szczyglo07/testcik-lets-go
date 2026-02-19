@@ -1,3 +1,4 @@
+console.log("API FILE LOADED");
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql } from "../lib/db.js";
 import bcrypt from "bcryptjs";
