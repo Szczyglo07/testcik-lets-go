@@ -15,6 +15,11 @@ import { User } from "lucide-react";
 export function Header() {
   const { getItemCount } = useCart();
   const itemCount = getItemCount();
+  const token =
+  typeof window !== "undefined"
+    ? localStorage.getItem("token")
+    : null;
+
 
   return (
     <header className="border-b bg-white sticky top-0 z-50">
@@ -34,6 +39,25 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          const token = localStorage.getItem("token");
+
+{token ? (
+  <button
+    className="px-3 py-1 rounded-md border"
+    onClick={() => {
+      localStorage.removeItem("token");
+      window.location.reload();
+    }}
+  >
+     Wyloguj
+  </button>
+) : (
+  <a href="/login" className="px-3 py-1 rounded-md border">
+    Login
+  </a>
+)}
+
+          
 
 
   <Link to="/checkout">
