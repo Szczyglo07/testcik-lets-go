@@ -5,8 +5,8 @@ import { EventDetail } from './pages/EventDetail';
 import { Checkout } from './pages/Checkout';
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
-import { Profile } from "./pages/Profile";
-import { MyEvents } from "./pages/MyEvents";
+import { Profile } from "./pages/profile";
+import { MyEvents } from "./pages/myEvents";
 
 
 export const router = createBrowserRouter([
