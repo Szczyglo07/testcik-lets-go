@@ -20,7 +20,7 @@ export function Header() {
     ? localStorage.getItem("token")
     : null;
 
-const token = localStorage.getItem("token");
+
 const isLoggedIn = !!token;
 
 function handleLogout() {
