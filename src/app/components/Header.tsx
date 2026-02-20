@@ -98,23 +98,7 @@ function handleLogout() {
       )}
     </Button>
   </Link>
-  <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="outline" size="icon">
-      <User className="size-5" />
-    </Button>
-  </DropdownMenuTrigger>
 
-  <DropdownMenuContent align="end">
-    <DropdownMenuItem asChild>
-      <Link to="/login">Zaloguj się</Link>
-    </DropdownMenuItem>
-
-    <DropdownMenuItem asChild>
-      <Link to="/register">Rejestracja</Link>
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
         </div>
       </div>
     </header>
