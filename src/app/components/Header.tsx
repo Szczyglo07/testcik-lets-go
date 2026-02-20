@@ -20,7 +20,13 @@ export function Header() {
     ? localStorage.getItem("token")
     : null;
 
+const token = localStorage.getItem("token");
+const isLoggedIn = !!token;
 
+function handleLogout() {
+  localStorage.removeItem("token");
+  window.location.reload();
+}
   return (
     <header className="border-b bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -41,21 +47,42 @@ export function Header() {
         <div className="flex items-center gap-3">
           
 
-{token ? (
-  <button
-    className="px-3 py-1 rounded-md border"
-    onClick={() => {
-      localStorage.removeItem("token");
-      window.location.reload();
-    }}
-  >
-     Wyloguj
-  </button>
-) : (
-  <a href="/login" className="px-3 py-1 rounded-md border">
-    Login
-  </a>
-)}
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline" size="icon">
+      <User className="size-5" />
+    </Button>
+  </DropdownMenuTrigger>
+
+  <DropdownMenuContent align="end">
+    {!isLoggedIn && (
+      <>
+        <DropdownMenuItem asChild>
+          <Link to="/login">Login</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/register">Rejestracja</Link>
+        </DropdownMenuItem>
+      </>
+    )}
+
+    {isLoggedIn && (
+      <>
+        <DropdownMenuItem asChild>
+          <Link to="/profile">Szczegóły</Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem asChild>
+          <Link to="/tickets">Moje bilety</Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={handleLogout}>
+          Wyloguj się
+        </DropdownMenuItem>
+      </>
+    )}
+  </DropdownMenuContent>
+</DropdownMenu>
 
           
 
